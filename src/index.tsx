@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
+import '@material/react-material-icon/dist/material-icon.css';
+import './index.scss';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

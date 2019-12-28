@@ -3,12 +3,25 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/icons": "^4.5.1",
+    "@material/react-material-icon": "^0.15.0",
+    "@react-navigation/core": "^3.5.1",
+    "@react-navigation/web": "^1.0.0-alpha.9",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.25",
+    "@types/node": "^13.1.1",
+    "@types/react": "^16.9.17",
+    "@types/react-dom": "^16.9.4",
+    "node-sass": "^4.13.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.3.0"
+    "react-draggable": "^4.2.0",
+    "react-grid-layout": "^0.17.1",
+    "react-rotary-knob": "^1.1.7",
+    "react-scripts": "3.3.0",
+    "typescript": "^3.7.4"
   },
   "scripts": {
     "start": "react-scripts start",

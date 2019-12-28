@@ -1,0 +1,17 @@
+@import "../../theme/variables";
+
+.floating-window {
+  min-width: 200px;
+  max-width: 80vw;
+  width: auto;
+  height: auto;
+  background: $windowContent;
+  border-radius: 2px;
+  border: 1px solid $bgHeader;
+  box-shadow: $bsLowerLeft1;
+
+  &.active {
+    box-shadow: $bsLowerLeft6;
+    border-color: $colAccent;
+  }
+}

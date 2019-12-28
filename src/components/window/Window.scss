@@ -1,0 +1,45 @@
+@import "../../theme/variables";
+
+.window-content {
+  padding: 15px;
+}
+
+.window-header {
+  height: 25px;
+  background: $bgHeader;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  color: $grayMutted;
+
+  &.active,
+  &.active .window-header-controls {
+    color: $grayLightest;
+  }
+
+  .window-header-title {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+  }
+
+  .window-header-controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    .window-header-control {
+      padding: 0 5px;
+      cursor: pointer;
+      background: transparent;
+      border: transparent;
+      color: $grayMutted;
+
+      i {
+        font-size: 14px;
+      }
+    }
+  }
+}

@@ -1,0 +1,123 @@
+@import "../../../theme/variables";
+
+.channel-rack {
+  // width: 100%;
+  // min-width: 100%;
+  width: auto;
+  height: 30px;
+  background: $grayBorder;
+  display: flex;
+  align-items: center;
+  padding-right: 10px;
+  outline: none;
+}
+
+.channel-rack-key {
+  height: 19px;
+  width: 12px;
+  min-width: 12px;
+  border: 1px solid #464849;
+  border-radius: 2px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), inset -1px -1px 3px rgba(0, 0, 0, 0.2);
+  display: inline-flex;
+  justify-content: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  margin: 0 2px;
+
+  &.blue {
+    background: $crKeyBlueInactive;
+    &:hover {
+      background: darken($crKeyBlueInactive, 3%);
+    }
+  }
+
+  &.red {
+    background: $crKeyRedInactive;
+    &:hover {
+      background: darken($crKeyRedInactive, 3%);
+    }
+  }
+
+  .channel-rack-key-hole {
+    background: #343939;
+    width: 6px;
+    height: 3px;
+    margin-top: 2px;
+    border-radius: 1px;
+    box-sizing: border-box;
+    border: 0.5px solid transparent;
+  }
+
+  &.active {
+    &.blue {
+      background: $crKeyBlueActive;
+    }
+
+    &.red {
+      background: $crKeyRedActive;
+    }
+
+    box-shadow: inset 1px -1px 3px rgba(0, 0, 0, 0.2), inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid #464849;
+
+    &.blue {
+      .channel-rack-key-hole {
+        border: 0.5px solid #95c6f7;
+        box-shadow: 0px 0px 4px #aad5ff, inset 0px 0px 3px #8bceff;
+      }
+    }
+
+    &.red {
+      .channel-rack-key-hole {
+        border: 0.5px solid #e89999;
+        box-shadow: 0px 0px 4px #ffb6b6, inset 0px 0px 3px #fa6868;
+      }
+    }
+  }
+}
+
+.active-indicator {
+  background: $colGrayMidLight;
+  border: 1px solid $grayBorder;
+  box-sizing: border-box;
+  box-shadow: inset 0px 0px 1px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  width: 4px;
+  height: 18px;
+  display: inline-flex;
+  margin: 0 5px;
+
+  &.active {
+    border: 1px solid $colAccent;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 3px lighten($color: $colAccent, $amount: 8%),
+      inset 0px 0px 1px lighten($color: $colAccent, $amount: 12%);
+  }
+}
+
+.rack-button {
+  background: $colGrayMidLight;
+  box-sizing: border-box;
+  box-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.2), inset -1px -1px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+  border: 1px solid $grayBorder;
+  padding: 0 20px;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  min-width: 100px;
+  height: 19px;
+
+  &:active {
+    background: darken($colGrayMidLight, 3%);
+    box-shadow: inset 1px -1px 3px rgba(0, 0, 0, 0.2), inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+  }
+
+  &:hover {
+    background: darken($colGrayMidLight, 3%);
+  }
+}

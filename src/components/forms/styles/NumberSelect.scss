@@ -1,0 +1,43 @@
+.number-select {
+  background: $colGrayMidLight;
+  border: 1px solid $grayBorder;
+  box-sizing: border-box;
+  box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  color: $colGrayLight;
+  padding: 0 5px 0px 8px;
+  height: 22px;
+
+  .number-select-content {
+    input {
+      color: $colGrayLight;
+      width: 30px;
+      background: none;
+      border: none;
+      outline: none;
+    }
+  }
+
+  .number-select-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    margin-left: 10px;
+    height: 100%;
+    .icon-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      .material-icons {
+        font-size: 10px;
+        color: $colGrayLight;
+      }
+    }
+  }
+}
