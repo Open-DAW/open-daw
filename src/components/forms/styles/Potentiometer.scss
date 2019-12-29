@@ -1,0 +1,75 @@
+@import "../../../theme/variables";
+.potentiometer {
+  width: 36px;
+  height: 36px;
+  margin: 0 10px;
+
+  .wrapper {
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 50%;
+    background: $colAccent;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.25);
+    position: relative;
+
+    cursor: grab;
+    &:active {
+      cursor: grabbing;
+    }
+
+    .center-circle {
+      z-index: 1;
+      border-radius: 50%;
+      width: 60%;
+      height: 60%;
+      background: $colGrayMid;
+      box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.4);
+
+      .center-circle-small {
+        border-radius: 50%;
+        width: 40%;
+        height: 40%;
+        background: $colAccent;
+        border: 1px solid $grayBorder;
+      }
+    }
+    .indicator-svg {
+      z-index: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      // background: $colAccent;
+      .svg {
+        transform: rotate(90deg);
+        border-radius: 50%;
+        display: block;
+        circle {
+          fill: transparent;
+          stroke: $colGrayMid;
+          stroke-width: 15;
+          stroke-dasharray: 0 158;
+          // transition: stroke-dasharray 0.3s ease;
+        }
+      }
+    }
+
+    .indicator {
+      z-index: 0;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      position: absolute;
+      display: block;
+      border-radius: 50%;
+      background-color: transparent;
+      float: left;
+      background-image: linear-gradient(126deg, transparent 50%, $colGrayMid 50%),
+        linear-gradient(90deg, $colGrayMid 50%, transparent 50%);
+    }
+  }
+}

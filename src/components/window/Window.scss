@@ -2,6 +2,9 @@
 
 .window-content {
   padding: 15px;
+  width: 100%;
+  max-width: 100%;
+  overflow: auto;
 }
 
 .window-header {
@@ -12,6 +15,7 @@
   justify-content: space-between;
   padding: 0 10px;
   color: $grayMutted;
+  cursor: grab;
 
   &.active,
   &.active .window-header-controls {

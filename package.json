@@ -14,11 +14,17 @@
     "@types/node": "^13.1.1",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
+    "howler": "^2.1.3",
     "node-sass": "^4.13.0",
+    "pizzicato": "^0.6.4",
+    "radium": "^0.26.0",
     "react": "^16.12.0",
+    "react-animations": "^1.0.0",
     "react-dom": "^16.12.0",
     "react-draggable": "^4.2.0",
     "react-grid-layout": "^0.17.1",
+    "react-modal": "^3.11.1",
+    "react-resizable": "^1.10.1",
     "react-rotary-knob": "^1.1.7",
     "react-scripts": "3.3.0",
     "typescript": "^3.7.4"
@@ -27,7 +33,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -43,5 +50,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@storybook/addon-actions": "^5.2.8",
+    "@storybook/addon-knobs": "^5.2.8",
+    "@storybook/react": "^5.2.8",
+    "babel-loader": "^8.0.6"
   }
 }

@@ -1,4 +1,5 @@
 @import "./theme/base-theme.scss";
+@import "./theme/variables";
 
 .react-draggable,
 .cursor {
@@ -34,6 +35,7 @@
 }
 
 body {
+  background: $colGrayMid;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
@@ -47,4 +49,31 @@ code {
 
 .text-mono {
   font-family: "Roboto Mono", monospace;
+}
+
+.ReactModal__Overlay {
+  background-color: rgba(black, 0.2) !important;
+  transition: opacity 2s ease-in-out;
+}
+
+.no-drag-image {
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+}
+
+.ReactModal__Content {
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.45);
+  background: $windowContent !important;
+  border-color: $grayBorder !important;
+}
+
+.ReactModal__Overlay--after-open {
+  // opacity: 1;
+}
+
+.ReactModal__Overlay--before-close {
+  // opacity: 0;
 }

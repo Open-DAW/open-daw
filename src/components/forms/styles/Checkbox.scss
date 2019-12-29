@@ -1,3 +1,4 @@
+@import "../../../theme/variables";
 .checkbox {
   width: 12px;
   height: 12px;
@@ -13,8 +14,8 @@
   margin: 10px;
 
   span {
-    width: 5px;
-    height: 5px;
+    width: 4px;
+    height: 4px;
     background: $colAccent;
     border-radius: 50%;
     opacity: 0;

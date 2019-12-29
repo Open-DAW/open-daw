@@ -1,14 +1,13 @@
 @import "../../theme/variables";
 
 .floating-window {
-  min-width: 200px;
-  max-width: 80vw;
-  width: auto;
+  width: 565px;
   height: auto;
   background: $windowContent;
-  border-radius: 2px;
+  border-radius: $borderRadius;
   border: 1px solid $bgHeader;
   box-shadow: $bsLowerLeft1;
+  cursor: default !important;
 
   &.active {
     box-shadow: $bsLowerLeft6;

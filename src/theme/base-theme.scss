@@ -1,5 +1,9 @@
 @import "./text.scss";
 
 *.disabled {
-    pointer-events: none;
+  pointer-events: none;
+}
+
+* {
+  outline: none;
 }

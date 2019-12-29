@@ -1,6 +1,6 @@
 @import "../../../theme/variables";
 
-.channel-rack {
+.channel-rack-item {
   // width: 100%;
   // min-width: 100%;
   width: auto;
@@ -10,6 +10,10 @@
   align-items: center;
   padding-right: 10px;
   outline: none;
+
+  .octave {
+    @extend .center;
+  }
 }
 
 .channel-rack-key {

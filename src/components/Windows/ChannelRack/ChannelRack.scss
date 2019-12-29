@@ -1,0 +1,17 @@
+.channel-rack {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0;
+  .channel-rack-header {
+    height: 20px;
+    width: 100%;
+  }
+
+  .channel-rack-footer {
+    height: 30px;
+    width: 100%;
+  }
+}

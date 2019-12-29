@@ -1,9 +1,9 @@
 import React from 'react';
 import Draggable from 'react-draggable';
 import './FloatingWindow.scss';
-import { hasStyle, hasOnClick } from '../base/interfaces/component-props';
+import { hasStyle, hasClassName } from '../base/interfaces/component-props';
 
-interface IRecipeProps extends hasStyle {
+interface IRecipeProps extends hasStyle, hasClassName {
     active: boolean;
     grid?: number[] | any;
 }
@@ -20,8 +20,10 @@ export default class FloatingWindow extends React.Component<IRecipeProps, IRecip
             <Draggable
                 grid={this.props.grid}
                 scale={1}
-                handle=".window-header">
-                <div style={this.props.style} className="floating-window">
+                handle=".window-header"
+                bounds="parent"
+            >
+                <div style={this.props.style} className={["floating-window", this.props.className].join(' ')}>
                     {this.props.children}
                 </div>
             </Draggable>

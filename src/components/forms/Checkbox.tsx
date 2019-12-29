@@ -1,5 +1,8 @@
 import React from 'react';
-interface IRecipeProps {
+import { hasOnChange } from '../base/interfaces/component-props';
+import './styles/Checkbox.scss';
+
+interface IRecipeProps extends hasOnChange {
     active?: boolean;
     disabled?: boolean;
     onChange?: (val: boolean | undefined) => any;
@@ -8,10 +11,6 @@ export default class Checkbox extends React.Component<IRecipeProps> {
     static defaultProps = {
         active: false,
         disabled: false,
-    }
-
-    constructor(props: any) {
-        super(props);
     }
 
     onClick = () => {

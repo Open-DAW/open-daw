@@ -1,6 +1,8 @@
 import React from 'react';
+import { hasClassName } from '../base/interfaces/component-props';
+import { Resizable, ResizableBox } from 'react-resizable';
 
-interface IRecipeProps {
+interface IRecipeProps extends hasClassName {
     collapsed: boolean;
 }
 export default class WindowContent extends React.Component<IRecipeProps> {
@@ -10,13 +12,16 @@ export default class WindowContent extends React.Component<IRecipeProps> {
 
     render() {
         return (
-            <div className="window-content" style={
-                (this.props.collapsed)
-                    ? { height: '0%' }
-                    : { height: '100%' }
-            }>
-                {this.props.children}
-            </div>
+            <ResizableBox>
+                <div className={["window-content", this.props.className].join(' ')}
+                    style={
+                        (this.props.collapsed)
+                            ? { height: '0%' }
+                            : { height: '100%' }
+                    }>
+                    {this.props.children}
+                </div>
+            </ResizableBox>
         );
     }
 }

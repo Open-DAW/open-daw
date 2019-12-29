@@ -4,14 +4,15 @@ import WindowHeader from './WindowHeader';
 import WindowFooter from './WindowFooter';
 import WindowContent from './WindowContent';
 import './Window.scss';
-import { hasStyle } from '../base/interfaces/component-props';
+import { hasStyle, hasClassName } from '../base/interfaces/component-props';
 
-interface IRecipeProps extends hasStyle {
+interface IRecipeProps extends hasStyle, hasClassName {
     headerActive?: boolean;
     footerActive?: boolean;
     title?: string;
     active?: boolean;
     collapsed?: boolean;
+    grid?: number[] | any;
 }
 
 interface IRecipeState {
@@ -23,7 +24,8 @@ export default class Window extends React.Component<IRecipeProps, IRecipeState> 
         headerActive: true,
         footerActive: false,
         title: 'Window',
-        style: {}
+        style: {},
+        grid: [50, 50]
     }
 
     constructor(props: any) {
@@ -49,12 +51,12 @@ export default class Window extends React.Component<IRecipeProps, IRecipeState> 
 
     render() {
         return (
-            <FloatingWindow style={this.props.style}>
+            <FloatingWindow grid={this.props.grid} style={this.props.style}>
                 {this.props.headerActive &&
                     <WindowHeader onAction={this.onAction} title={this.props.title} active={this.state.active}></WindowHeader>
                 }
                 {this.props.children &&
-                    <WindowContent collapsed={this.state.collapsed}>{this.props.children}</WindowContent>
+                    <WindowContent className={this.props.className}  collapsed={this.state.collapsed}>{this.props.children}</WindowContent>
                 }
                 {this.props.footerActive &&
                     <WindowFooter></WindowFooter>

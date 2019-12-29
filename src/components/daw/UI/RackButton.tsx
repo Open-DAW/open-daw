@@ -1,20 +1,21 @@
 import React from 'react';
-import { hasStyle } from '../../base/interfaces/component-props';
+import { hasStyle, hasOnClick } from '../../base/interfaces/component-props';
 
-interface IRecipeProps extends hasStyle {
-    content?: string;
+interface IRecipeProps extends hasStyle, hasOnClick {
+    label?: string;
 }
 export default class RackButton extends React.Component<IRecipeProps> {
     static defaultProps = {
-        content: 'Button',
+        label: 'Button',
     }
 
     render() {
         return (
             <button
                 style={this.props.style}
+                onClick={this.props.onClick}
                 className="rack-button">
-                <span className="mono-text-small col-gray-light">{this.props.content}</span>
+                <span className="mono-text-small col-gray-light">{this.props.label}</span>
             </button>
         )
     }
