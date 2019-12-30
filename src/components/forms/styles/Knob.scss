@@ -2,7 +2,7 @@
 .wrapper {
   width: 18px;
   height: 18px;
-  margin: 0 10px;
+  margin: 0 5px;
   box-shadow: -1px 1px 4px rgba(0, 0, 0, 0.25);
   border-radius: 50%;
 
@@ -11,9 +11,9 @@
     height: 18px;
     border-radius: 50%;
     border: 1px solid $colGrayMid;
+    background: $colGrayMidLight;
     position: relative;
     transform-origin: center center;
-    background: $colGrayMidLight;
     cursor: grab;
     &:active {
       cursor: grabbing;

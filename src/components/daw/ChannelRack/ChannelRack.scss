@@ -1,18 +1,18 @@
 @import "../../../theme/variables";
 
 .channel-rack-item {
-  // width: 100%;
-  // min-width: 100%;
-  width: auto;
   height: 30px;
   background: $grayBorder;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   padding-right: 10px;
   outline: none;
 
   .octave {
     @extend .center;
+    &:not(:last-child) {
+      border-right: 1px solid darken($grayBorder, 5%);
+    }
   }
 }
 

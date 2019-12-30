@@ -2,6 +2,7 @@
 
 .floating-window {
   width: 565px;
+  max-width: 10000px;
   height: auto;
   background: $windowContent;
   border-radius: $borderRadius;

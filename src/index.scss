@@ -77,3 +77,67 @@ code {
 .ReactModal__Overlay--before-close {
   // opacity: 0;
 }
+
+.rc-slider-rail {
+  background: $colGrayMid !important;
+  box-sizing: border-box;
+  // border: 1px solid $colGrayMid;
+}
+
+.rc-slider-track {
+  background: $colAccent !important;
+  // border: 1px solid $colGrayMid;
+}
+
+.rc-slider-handle {
+  background: $colGrayMid !important;
+  border: 1px solid $colAccent !important;
+  position: relative;
+  &::after {
+    content: "";
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: $colAccent;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &:active {
+    box-shadow: 0 0 5px lighten($colAccent, 10%) !important;
+  }
+}
+
+.__react_component_tooltip {
+  background-color: $bgHeader !important;
+  font-family: Roboto;
+  font-size: 10px;
+  padding: 3px 8px;
+  font-weight: 400;
+}
+
+.__react_component_tooltip.type-dark.place-bottom:after {
+  border-bottom-color: $bgHeader;
+  display: none;
+}
+
+.__react_component_tooltip.place-bottom:after {
+  left: 15%;
+}
+
+.knob-circle {
+  stroke: $grayBorder;
+  stroke-width: 3px;
+  fill: $colGrayMidLight;
+}
+.activeScale {
+  fill: $colAccent;
+  r: 2px;
+  transition: 100ms ease-in-out;
+}
+.normalScale {
+  fill: $colAccent;
+  r: 1px;
+  transition: 450ms ease-in-out;
+}

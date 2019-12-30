@@ -2,8 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App/App';
 import * as serviceWorker from './serviceWorker';
+
+import ReactTooltip from 'react-tooltip';
+
 import '@material/react-material-icon/dist/material-icon.css';
 import './index.scss';
+import "react-resizable/css/styles.css";
+import 'rc-slider/assets/index.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

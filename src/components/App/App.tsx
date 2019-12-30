@@ -12,9 +12,9 @@ import Potentiometer from '../forms/Potentiometer';
 import NumberSelect from '../forms/NumberSelect';
 import RackButton from '../daw/UI/RackButton';
 import ChannelRackItem from '../daw/ChannelRack/ChannelRackItem';
-import Dialog from '../base/Dialog';
-import Knob from '../forms/Knob';
 import ChannelRack from '../Windows/ChannelRack/ChannelRack';
+import ReactTooltip from 'react-tooltip'
+import Knob from '../forms/Knob';
 
 interface IRecipeState {
   openDialog: boolean;
@@ -22,7 +22,7 @@ interface IRecipeState {
   sliderValue: number;
   grid?: number[] | any;
 }
-export default class App extends React.Component<{}, IRecipeState> {
+export default class App extends React.Component<{ showScale: boolean }, IRecipeState> {
   constructor(props: any) {
     super(props);
 
@@ -32,6 +32,10 @@ export default class App extends React.Component<{}, IRecipeState> {
       openDialog: false,
       sliderValue: 30
     }
+  }
+
+  static defaultProps = {
+    showScale: false
   }
 
   componentDidMount() {
@@ -58,6 +62,12 @@ export default class App extends React.Component<{}, IRecipeState> {
   render() {
     return (
       <div style={{ height: '100vh' }}>
+        {/* <ResizableBox width={200} height={300} minConstraints={[200, 300]} maxConstraints={[1200, 600]}>
+          <div style={{width: '100px', height: '50px', background: 'gray'}}>
+            asdasd
+          </div>
+        </ResizableBox> */}
+
         <Window grid={this.state.grid} style={{ width: '600px', height: '150px' }} title="UI Components">
           <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
             <CRPatternKey></CRPatternKey>
@@ -84,10 +94,10 @@ export default class App extends React.Component<{}, IRecipeState> {
               onClick={() => this.setState({ openDialog: !this.state.openDialog })}
             />
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              <Dialog
+              {/* <Dialog
                 open={this.state.openDialog}
                 onClose={() => this.setState({ openDialog: false })}
-              />
+              /> */}
             </div>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <Slider showLabel value={10} />
@@ -97,6 +107,13 @@ export default class App extends React.Component<{}, IRecipeState> {
           <Knob value={10} />
         </Window>
         <ChannelRack />
+
+        <ReactTooltip />
+
+        <Knob
+          size={50}
+          onChange={(value) => console.log(value)}
+        />
       </div>
     );
   }

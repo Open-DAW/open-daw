@@ -39,13 +39,17 @@ export default class DragDetector extends React.Component<IRecipeProps, Coords> 
     }
 
     drag = (event) => {
-        let offsetX = event.currentTarget.parentElement.offsetLeft;
-        let offsetY = event.currentTarget.parentElement.offsetTop;
+        console.log({ ...event })
+
+        let offsetX = event.currentTarget.parentNode.offsetLeft;
+        let offsetY = event.currentTarget.parentNode.offsetTop;
         let newX = event.clientX - offsetX;
         let newY = event.clientY - offsetY;
+        console.log({ clientX: event.clientX, offsetX })
 
         if (newX < this.props.minX || newX > this.props.maxX) return;
         if (newY < this.props.minY || newY > this.props.maxY) return;
+        console.log('ahjiosd')
 
         let newPos = {
             x: newX - this.state.x,

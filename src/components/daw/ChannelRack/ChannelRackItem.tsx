@@ -69,10 +69,10 @@ export default class ChannelRackItem extends React.Component<IRecipeProps, IReci
 
     render() {
         return (
-            <div key={this.props.name} className="channel-rack-item" tabIndex={-1} onFocus={this.onFocus} onBlur={this.onBlur}>
+            <div key={this.props.name} className="channel-rack-item" tabIndex={-1}>
                 <Checkbox disabled active={this.state.active} onChange={(active) => this.setState({ active })} />
-                <Knob value={this.state.pan}/>
-                <Knob value={this.state.gain}/>
+                <Knob value={this.state.pan} />
+                <Knob value={this.state.gain} />
                 <NumberSelect />
                 <RackButton label={this.props.name} style={{ marginRight: 0 }} />
                 <ActiveIndicator active={this.state.active} />

@@ -6,6 +6,7 @@ import ChannelRackHeader from './ChannelRackHeader';
 import ChannelRackFooter from './ChannelRackFooter';
 import ChannelRackItem from '../../daw/ChannelRack/ChannelRackItem';
 import { RackItem } from '../../../entities/RackItem';
+import { Scrollbars } from 'react-custom-scrollbars';
 
 interface IRecipeProps {
 
@@ -23,25 +24,45 @@ export default class ChannelRack extends React.Component<IRecipeProps, IRecipeSt
     constructor(props: any) {
         super(props);
         this.state = {
-            rackItems: [
-                new RackItem('Kick'),
-                new RackItem('Snare'),
-                new RackItem('Hihat'),
-            ],
-            octaves: 1,
+            rackItems: [],
+            octaves: 2,
         };
     }
 
+    componentDidMount() {
+        this.setState({
+            rackItems: [
+                new RackItem('Kick'),
+                new RackItem('Snare'),
+                new RackItem('Hat'),
+            ]
+        });
+    }
+
+    addRackItem(name: string) {
+        this.setState({ rackItems: [...this.state.rackItems, new RackItem(name + this.state.rackItems.length)] });
+    }
     onChangeOctave = (octaves) => this.setState({ octaves });
+    onAddRackItem = () => this.addRackItem('Sample');
+
 
     render() {
         return (
-            <Window className="channel-rack" title="Channel Rack" style={{ minWidth: '565px' }}>
+            <Window className="channel-rack" title="Channel Rack" style={{ minWidth: '665px' }}>
                 <ChannelRackHeader onChangeOctave={this.onChangeOctave} />
-                {this.state.rackItems.map(
-                    item => <div key={item.name}><ChannelRackItem name={item.name} octaves={this.state.octaves} /></div>
-                )}
-                <ChannelRackFooter />
+                <Scrollbars
+                    autoHide
+                    autoHideTimeout={300}
+                    autoHideDuration={200}
+                    autoHeight
+                    autoHeightMin={100}
+                    autoHeightMax={280}
+                    style={{ width: 665, minHeight: 100, height: 'auto' }}>
+                    {this.state.rackItems.map(
+                        item => <ChannelRackItem key={item.name} name={item.name} octaves={this.state.octaves} />
+                    )}
+                </Scrollbars>
+                <ChannelRackFooter onAdd={this.onAddRackItem} />
             </Window>
         );
     }

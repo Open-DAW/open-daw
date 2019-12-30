@@ -1,12 +1,19 @@
 import React from 'react';
+import MaterialIcon from '@material/react-material-icon';
+import { hasOnClick } from '../../base/interfaces/component-props';
 
-export default class ChannelRackFooter extends React.Component {
+interface IRecipeProps {
+    onAdd: (...args: any[]) => any
+}
+export default class ChannelRackFooter extends React.Component<IRecipeProps> {
     static defaultProps = {}
 
     render() {
         return (
             <div className="channel-rack-footer">
-
+                <button className="footer-header-control" onClick={this.props.onAdd}>
+                    <MaterialIcon icon="add"></MaterialIcon>
+                </button>
             </div>
         )
     }

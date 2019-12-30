@@ -12,16 +12,9 @@ export default class WindowContent extends React.Component<IRecipeProps> {
 
     render() {
         return (
-            <ResizableBox>
-                <div className={["window-content", this.props.className].join(' ')}
-                    style={
-                        (this.props.collapsed)
-                            ? { height: '0%' }
-                            : { height: '100%' }
-                    }>
-                    {this.props.children}
-                </div>
-            </ResizableBox>
+            <div className={["window-content", this.props.className].join(' ')}>
+                {this.props.children}
+            </div>
         );
     }
 }

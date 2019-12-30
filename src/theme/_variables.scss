@@ -25,9 +25,18 @@ $grayDark: #575959;
   color: $grayLightest;
 }
 
-.col-gray-accent {
+.col-accent {
   color: $colAccent;
 }
+
+.bg-accent {
+  background: $colAccent;
+}
+
+.fill-accent {
+  fill: $colAccent;
+}
+
 
 $borderRadius: 3px;
 

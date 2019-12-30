@@ -59,7 +59,7 @@ export default class Slider extends React.Component<IRecipeProps, Coords> {
                 className={["slider", this.props.disabled ? 'disabled' : ''].join(' ')}
                 tabIndex={-1}
                 onClick={this.clickedSlider}>
-                <DragDetector
+                {/* <DragDetector
                     minX={this.props.minX}
                     maxX={this.props.maxX}
                     pos={this.state}
@@ -68,8 +68,14 @@ export default class Slider extends React.Component<IRecipeProps, Coords> {
                     className="slider-rail">
                     <div className="slider-rail-traveled" style={{ width: this.state.x + 'px' }}></div>
                     <div className="slider-indicator-circle" style={{ left: this.state.x + 'px' }}></div>
-                </DragDetector>
-                
+                </DragDetector> */}
+                <div
+                    onChange={this.dragged}
+                    className="slider-rail">
+                    <div className="slider-rail-traveled" style={{ width: this.state.x + 'px' }}></div>
+                    <div className="slider-indicator-circle" style={{ left: this.state.x + 'px' }}></div>
+                </div>
+
 
                 {this.props.showLabel &&
                     <MonoText>{this.state.x}</MonoText>
