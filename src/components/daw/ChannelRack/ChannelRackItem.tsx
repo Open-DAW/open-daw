@@ -1,10 +1,10 @@
 import React from 'react';
-import Checkbox from '../../forms/Checkbox';
+import Checkbox from '../../Forms/Checkbox';
 import RackButton from '../UI/RackButton';
-import NumberSelect from '../../forms/NumberSelect';
+import NumberSelect from '../../Forms/NumberSelect';
 import ActiveIndicator from './ActiveIndicator';
 import CRPatternKey from './CRPatternKey';
-import Knob from '../../forms/Knob';
+import Knob from '../../Forms/Knob';
 
 interface IRecipeProps {
     octaves: number;

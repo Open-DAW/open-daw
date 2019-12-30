@@ -19,7 +19,7 @@ interface IRecipeState {
     active: boolean;
     collapsed: boolean;
 }
-export default class Window extends React.Component<IRecipeProps, IRecipeState> {
+export default class AppWindow extends React.Component<IRecipeProps, IRecipeState> {
     static defaultProps = {
         headerActive: true,
         footerActive: false,

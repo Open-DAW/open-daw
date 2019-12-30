@@ -1,13 +1,17 @@
-import { fadeIn, fadeOut } from 'react-animations';
+import { zoomIn, scaleIn } from 'react-animations';
 import Radium from 'radium';
 
 export default {
-    fadeIn: {
-        animation: 'x 1s',
-        animationName: Radium.keyframes(fadeIn, 'fadeIn')
+    scale: {
+        in: {
+            animation: 'x .35s',
+            animationName: Radium.keyframes(scaleIn, 'slideInUp')
+        }
     },
-    fadeOut: {
-        animation: 'x 1s',
-        animationName: Radium.keyframes(fadeOut, 'fadeOut')
+    page: {
+        in: {
+            animation: 'x .35s',
+            animationName: Radium.keyframes(zoomIn, 'slideInUp')
+        }
     }
 }

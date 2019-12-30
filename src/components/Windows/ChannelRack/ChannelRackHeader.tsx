@@ -1,7 +1,6 @@
 import React from 'react';
-import NumberSelect from '../../forms/NumberSelect';
-// import Slider from '../../forms/Slider';
-import Slider, { Range } from 'rc-slider';
+import NumberSelect from '../../Forms/NumberSelect';
+import Slider from 'rc-slider';
 
 interface IRecipeProps {
     octaves: number;

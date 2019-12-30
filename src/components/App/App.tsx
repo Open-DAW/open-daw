@@ -1,20 +1,18 @@
 import React from 'react';
-import Pizzicato from 'pizzicato';
-
 import './App.scss';
 
-import Window from '../window/Window';
-import CRPatternKey from '../daw/ChannelRack/CRPatternKey';
-import ActiveIndicator from '../daw/ChannelRack/ActiveIndicator';
-import Checkbox from '../forms/Checkbox';
-import Slider from '../forms/Slider';
-import Potentiometer from '../forms/Potentiometer';
-import NumberSelect from '../forms/NumberSelect';
-import RackButton from '../daw/UI/RackButton';
-import ChannelRackItem from '../daw/ChannelRack/ChannelRackItem';
+import Window from '../Window/Window';
+import CRPatternKey from '../DAW/ChannelRack/CRPatternKey';
+import ActiveIndicator from '../DAW/ChannelRack/ActiveIndicator';
+import Checkbox from '../Forms/Checkbox';
+import Slider from '../Forms/Slider';
+import Potentiometer from '../Forms/Potentiometer';
+import NumberSelect from '../Forms/NumberSelect';
+import RackButton from '../DAW/UI/RackButton';
+import ChannelRackItem from '../DAW/ChannelRack/ChannelRackItem';
 import ChannelRack from '../Windows/ChannelRack/ChannelRack';
 import ReactTooltip from 'react-tooltip'
-import Knob from '../forms/Knob';
+import Knob from '../Forms/Knob';
 
 interface IRecipeState {
   openDialog: boolean;
@@ -39,23 +37,23 @@ export default class App extends React.Component<{ showScale: boolean }, IRecipe
   }
 
   componentDidMount() {
-    const sineWave = new Pizzicato.Sound({
-      source: 'wave',
-      options: {
-        frequency: 220,
-        volume: 0.05
-      }
-    });
+    // const sineWave = new Pizzicato.Sound({
+    //   source: 'wave',
+    //   options: {
+    //     frequency: 220,
+    //     volume: 0.05
+    //   }
+    // });
 
-    var delay = new Pizzicato.Effects.Delay({
-      feedback: 0.6,
-      time: 0.4,
-      mix: 0.5
-    });
+    // var delay = new Pizzicato.Effects.Delay({
+    //   feedback: 0.6,
+    //   time: 0.4,
+    //   mix: 0.5
+    // });
 
-    sineWave.addEffect(delay);
-    sineWave.play();
-    sineWave.stop();
+    // sineWave.addEffect(delay);
+    // sineWave.play();
+    // sineWave.stop();
   }
 
 

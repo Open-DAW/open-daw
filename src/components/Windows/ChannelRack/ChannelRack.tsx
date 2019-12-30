@@ -1,12 +1,12 @@
 import React from 'react';
 import './ChannelRack.scss';
 
-import Window from '../../window/Window';
+import { Scrollbars } from 'react-custom-scrollbars';
 import ChannelRackHeader from './ChannelRackHeader';
 import ChannelRackFooter from './ChannelRackFooter';
-import ChannelRackItem from '../../daw/ChannelRack/ChannelRackItem';
 import { RackItem } from '../../../entities/RackItem';
-import { Scrollbars } from 'react-custom-scrollbars';
+import ChannelRackItem from '../../DAW/ChannelRack/ChannelRackItem';
+import AppWindow from '../../Window/Window';
 
 interface IRecipeProps {
 
@@ -48,7 +48,7 @@ export default class ChannelRack extends React.Component<IRecipeProps, IRecipeSt
 
     render() {
         return (
-            <Window className="channel-rack" title="Channel Rack" style={{ minWidth: '665px' }}>
+            <AppWindow className="channel-rack" title="Channel Rack" style={{ minWidth: '665px' }}>
                 <ChannelRackHeader onChangeOctave={this.onChangeOctave} />
                 <Scrollbars
                     autoHide
@@ -63,7 +63,7 @@ export default class ChannelRack extends React.Component<IRecipeProps, IRecipeSt
                     )}
                 </Scrollbars>
                 <ChannelRackFooter onAdd={this.onAddRackItem} />
-            </Window>
+            </AppWindow>
         );
     }
 }

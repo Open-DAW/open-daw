@@ -1,7 +1,5 @@
 import React from 'react';
 import { hasOnChange } from '../base/interfaces/component-props';
-import { Coords } from '../base/interfaces/coordenates';
-import { numberFixed } from '../../utils/utils';
 import * as rc from 'rc-knob';
 
 import './styles/Knob.scss';
@@ -15,27 +13,6 @@ interface IRecipeProps extends hasOnChange {
     angleOffset: number;
     angleRange: number;
 }
-const customScaleTick = ({
-    tickWidth,
-    tickHeight,
-    translateX,
-    translateY,
-    angleOffset,
-    stepSize,
-    center,
-    active,
-    i,
-}) => (<rect
-    fill={`hsl(${(240 + (40 - i) * 4) % 360},100%, 60%)`}
-    stroke="none"
-    width={tickWidth}
-    height={i === active ? 9 : tickHeight}
-    key={i}
-    transform={`
-        rotate(${angleOffset + stepSize * i} ${center} ${center}) 
-        translate( ${translateX} ${translateY})
-        `}
-/>)
 export default class Knob extends React.Component<IRecipeProps> {
     static defaultProps = {
         min: 0,

@@ -15,6 +15,10 @@ export interface hasOnInput {
     onInput: (...args: any[]) => any
 }
 
+export interface hasNavigation {
+    navigation?: any;
+}
+
 export interface hasStyle {
     style?: React.CSSProperties;
 }

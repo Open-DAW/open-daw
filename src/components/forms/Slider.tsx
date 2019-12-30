@@ -1,11 +1,9 @@
 import React from 'react';
 import { hasOnChange, hasStyle } from '../base/interfaces/component-props';
-import DragDetector from '../base/DragDetector';
-
-import './styles/Slider.scss';
 import { Coords } from '../base/interfaces/coordenates';
-import MonoText from '../text/Mono';
+import MonoText from '../Text/Mono';
 import { constrain } from '../../utils/utils';
+import './styles/Slider.scss';
 
 
 interface IRecipeProps extends hasOnChange, hasStyle {

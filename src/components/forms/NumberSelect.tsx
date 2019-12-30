@@ -1,6 +1,7 @@
 import React from 'react';
 import MaterialIcon from '@material/react-material-icon';
 import './styles/NumberSelect.scss';
+
 interface IRecipeProps {
     value: number;
     min: number;

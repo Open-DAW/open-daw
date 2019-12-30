@@ -1,6 +1,20 @@
 @import "./theme/base-theme.scss";
 @import "./theme/variables";
 
+body,
+#root {
+  height: 100vh;
+}
+
+.logo path {
+  fill: $colAccent;
+}
+
+.auth-page {
+  width: 400px;
+  padding-bottom: 30px !important;
+}
+
 .react-draggable,
 .cursor {
   cursor: move;
@@ -140,4 +154,42 @@ code {
   fill: $colAccent;
   r: 1px;
   transition: 450ms ease-in-out;
+}
+
+.title {
+  font-weight: 200;
+}
+.text-mutted {
+  font-size: 12px;
+}
+.space-between {
+  @extend .center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+a {
+  font-size: 12px;
+  color: $grayMutted;
+  padding: 0;
+  margin-bottom: 10px;
+  text-align: left;
+  &:hover {
+    color: darken($grayMutted, 5%);
+  }
+}
+
+.centered-abs {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: auto;
+}
+
+.right-abs {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
 }

@@ -1,0 +1,28 @@
+@import "../../../theme/variables";
+.input {
+  position: relative;
+  margin-bottom: 10px;
+
+  input {
+    background: $colGrayMid !important;
+    background-color: $colGrayMid !important;
+    border-radius: 3px;
+    border: none;
+    width: 300px;
+    padding: 8px 10px;
+    color: $colGrayLight !important;
+  }
+
+  .material-icons {
+    color: $colGrayLight;
+    font-size: 12px;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px $colGrayMid inset !important;
+  -webkit-text-fill-color: $colGrayLight;
+}

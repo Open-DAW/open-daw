@@ -1,6 +1,5 @@
 import React from 'react';
 import { hasClassName } from '../base/interfaces/component-props';
-import { Resizable, ResizableBox } from 'react-resizable';
 
 interface IRecipeProps extends hasClassName {
     collapsed: boolean;

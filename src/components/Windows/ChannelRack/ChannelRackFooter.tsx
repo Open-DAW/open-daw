@@ -1,6 +1,5 @@
 import React from 'react';
 import MaterialIcon from '@material/react-material-icon';
-import { hasOnClick } from '../../base/interfaces/component-props';
 
 interface IRecipeProps {
     onAdd: (...args: any[]) => any
