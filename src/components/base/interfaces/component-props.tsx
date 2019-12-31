@@ -10,7 +10,6 @@ export interface hasOnClose {
     onClose?: (...args: any[]) => any
 }
 
-
 export interface hasOnInput {
     onInput: (...args: any[]) => any
 }

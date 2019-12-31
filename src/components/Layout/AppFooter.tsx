@@ -1,11 +1,14 @@
 import React from 'react';
+import './styles/AppFooter.scss';
 
 export default class AppFooter extends React.Component {
     static defaultProps = {}
 
     render() {
         return (
-            <input />
+            <div className="app-footer">
+
+            </div>
         )
     }
 }

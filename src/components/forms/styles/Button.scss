@@ -8,6 +8,12 @@
   color: $colGrayLight;
   width: auto;
 
+  &.transparent {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
   &.full-width {
     width: 45%;
   }

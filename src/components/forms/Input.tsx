@@ -3,7 +3,6 @@ import './styles/Input.scss';
 import { Button } from './Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
-import { useField } from "react-form";
 import TextMutted from '../Text/Mutted';
 import animations from '../../animations';
 
@@ -54,48 +53,4 @@ export class InputPassword extends React.Component<{ show: boolean; label: strin
             </Input>
         );
     }
-}
-
-export function ValidatableInput(props: IRecipeProps) {
-    const {
-        meta: { error, isTouched },
-        getInputProps
-    } = useField(props.name, {
-        validate: (name) => (name ? false : (props.name + ' is required'))
-    });
-
-    return (
-        <div>
-            <Input {...{ ...props, inputProps: getInputProps() }} />
-            {
-                isTouched && error ? (
-                    <div style={{ ...animations.scale.in, textTransform: 'capitalize' }}>
-                        <TextMutted className='col-error' text={error} />
-                    </div>
-                ) : null
-            }
-        </div>
-    );
-}
-
-export function ValidatablePassword(props: any) {
-    const {
-        meta: { error, isTouched },
-        getInputProps
-    } = useField(props.name, {
-        validate: (name) => (name ? false : (props.name + ' is required'))
-    });
-
-    return (
-        <div>
-            <InputPassword {...{ ...props, inputProps: getInputProps() }} />
-            {
-                isTouched && error ? (
-                    <div style={{ ...animations.scale.in, textTransform: 'capitalize' }}>
-                        <TextMutted className='col-error' text={error} />
-                    </div>
-                ) : null
-            }
-        </div>
-    );
 }

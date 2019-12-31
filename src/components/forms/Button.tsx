@@ -8,6 +8,7 @@ interface IRecipeProps extends hasClassName, hasStyle, hasOnClick, hasNavigation
     toRoute?: string;
     icon?: boolean;
     disabled?: boolean;
+    transparent?: boolean;
     type?: "button" | "submit" | "reset" | undefined;
 }
 export class Button extends React.Component<IRecipeProps> {
@@ -32,7 +33,12 @@ export class Button extends React.Component<IRecipeProps> {
                 onClick={this.handleOnClick}
                 style={this.props.style}
                 type={this.props.type}
-                className={["button", this.props.className, this.props.icon ? 'icon' : ''].join(' ')}
+                className={
+                    ["button", 
+                    this.props.className, 
+                    this.props.icon ? 'icon' : '',
+                    this.props.transparent ? 'transparent' : '',
+                ].join(' ')}
             >
                 {this.props.label || this.props.children}
             </button>

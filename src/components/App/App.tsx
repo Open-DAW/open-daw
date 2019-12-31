@@ -13,6 +13,7 @@ import ChannelRackItem from '../DAW/ChannelRack/ChannelRackItem';
 import ChannelRack from '../Windows/ChannelRack/ChannelRack';
 import ReactTooltip from 'react-tooltip'
 import Knob from '../Forms/Knob';
+import { ButtonNav } from '../Forms/Button';
 
 interface IRecipeState {
   openDialog: boolean;
@@ -60,13 +61,11 @@ export default class App extends React.Component<{ showScale: boolean }, IRecipe
   render() {
     return (
       <div style={{ height: '100vh' }}>
-        {/* <ResizableBox width={200} height={300} minConstraints={[200, 300]} maxConstraints={[1200, 600]}>
-          <div style={{width: '100px', height: '50px', background: 'gray'}}>
-            asdasd
-          </div>
-        </ResizableBox> */}
+        <ButtonNav toRoute="workspace" label="Workspace"/>
+        <ButtonNav toRoute="signin" label="Signin"/>
+        <ButtonNav toRoute="signup" label="Signup"/>
 
-        <Window grid={this.state.grid} style={{ width: '600px', height: '150px' }} title="UI Components">
+        <Window grid={this.state.grid} style={{ width: '600px', height: '250px' }} title="UI Components">
           <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
             <CRPatternKey></CRPatternKey>
             <CRPatternKey active></CRPatternKey>
@@ -92,26 +91,20 @@ export default class App extends React.Component<{ showScale: boolean }, IRecipe
               onClick={() => this.setState({ openDialog: !this.state.openDialog })}
             />
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              {/* <Dialog
-                open={this.state.openDialog}
-                onClose={() => this.setState({ openDialog: false })}
-              /> */}
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
               <Slider showLabel value={10} />
             </div>
           </div>
           <Potentiometer value={10} />
           <Knob value={10} />
+
+          <Knob
+            size={50}
+            onChange={(value) => console.log(value)}
+          />
         </Window>
+
         <ChannelRack />
-
         <ReactTooltip />
-
-        <Knob
-          size={50}
-          onChange={(value) => console.log(value)}
-        />
       </div>
     );
   }
