@@ -41,6 +41,7 @@
     "react-resizable": "^1.10.1",
     "react-rotary-knob": "^1.1.7",
     "react-scripts": "3.3.0",
+    "react-sidebar": "^3.0.2",
     "react-tooltip": "^3.11.1",
     "typescript": "^3.7.4"
   },

@@ -3,8 +3,7 @@ import './styles/Input.scss';
 import { Button } from './Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
-import TextMutted from '../Text/Mutted';
-import animations from '../../animations';
+
 
 interface IRecipeProps {
     label?: string;
