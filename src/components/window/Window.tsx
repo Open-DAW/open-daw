@@ -5,6 +5,7 @@ import WindowFooter from './WindowFooter';
 import WindowContent from './WindowContent';
 import './Window.scss';
 import { hasStyle, hasClassName } from '../base/interfaces/component-props';
+import { Resizable } from 're-resizable';
 
 interface IRecipeProps extends hasStyle, hasClassName {
     headerActive?: boolean;
@@ -55,9 +56,11 @@ export default class AppWindow extends React.Component<IRecipeProps, IRecipeStat
                 {this.props.headerActive &&
                     <WindowHeader onAction={this.onAction} title={this.props.title} active={this.state.active}></WindowHeader>
                 }
+
                 {this.props.children &&
-                    <WindowContent className={this.props.className}  collapsed={this.state.collapsed}>{this.props.children}</WindowContent>
+                    <WindowContent className={this.props.className} collapsed={this.state.collapsed}>{this.props.children}</WindowContent>
                 }
+
                 {this.props.footerActive &&
                     <WindowFooter></WindowFooter>
                 }

@@ -1,8 +1,7 @@
 
 import React from 'react';
 import Modal from 'react-modal';
-import { hasOnClose } from './interfaces/component-props';
-import animations from '../../animations';
+import { hasOnClose, hasStyle } from './interfaces/component-props';
 import { StyleRoot } from 'radium';
 
 const customStyles = {
@@ -17,38 +16,24 @@ const customStyles = {
 };
 Modal.setAppElement('#root');
 
-
-interface IRecipeProps extends hasOnClose {
-    open?: boolean;
+interface IRecipeProps extends hasOnClose, hasStyle {
+    isOpen?: boolean;
+    contentLabel?: string;
+    afterOpenModal?: (...args: any[]) => any
 }
 export default class Dialog extends React.Component<IRecipeProps> {
-    public subtitle;
-   
-    afterOpenModal = () => {
-        // references are now sync'd and can be accessed.
-        this.subtitle.style.color = '#f00';
-    }
-
     render() {
         return (
             <StyleRoot>
                 <Modal
-                    style={{ ...customStyles }}
-                    isOpen={this.props.open}
-                    onAfterOpen={this.afterOpenModal}
+                    style={{ ...customStyles, ...this.props.style }}
+                    isOpen={this.props.isOpen}
+                    onAfterOpen={this.props.afterOpenModal}
                     onRequestClose={this.props.onClose}
-                    contentLabel="Example Modal"
+                    contentLabel={this.props.contentLabel}
+                    shouldCloseOnOverlayClick={true}
                 >
-                    <h2 ref={_subtitle => (this.subtitle = _subtitle)}>Hello</h2>
-                    <button onClick={this.props.onClose}>close</button>
-                    <div>I am a modal</div>
-                    <form>
-                        <input />
-                        <button>tab navigation</button>
-                        <button>stays</button>
-                        <button>inside</button>
-                        <button>the modal</button>
-                    </form>
+                    {this.props.children}
                 </Modal>
             </StyleRoot>
         );

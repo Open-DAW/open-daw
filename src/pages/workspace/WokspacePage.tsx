@@ -1,38 +1,49 @@
 import React from 'react';
 import AppHeader from '../../components/Layout/AppHeader';
 import AppFooter from '../../components/Layout/AppFooter';
+import { HotKeys } from "react-hotkeys";
+import { KeyMap } from '../../config/hotkeys';
+import HotkeyDialog from '../../components/Dialogs/Hotkeys.dia';
 
 interface IRecipeState {
-    openDialog: boolean;
-    active: boolean;
-    sliderValue: number;
-    grid?: number[] | any;
+    showHotKeys: boolean;
 }
 export default class WorkspacePage extends React.Component<{ showScale: boolean }, IRecipeState> {
     constructor(props: any) {
         super(props);
 
         this.state = {
-            active: false,
-            grid: [50, 50],
-            openDialog: false,
-            sliderValue: 30
+            showHotKeys: true,
         }
     }
 
-    static defaultProps = {
-        showScale: false
+    public toggleHotkeyWindow = () => {
+        this.setState({
+            showHotKeys: !this.state.showHotKeys
+        })
     }
+
+
+    public handlers = {
+        TOGGLE_HOTKEY_WINDOW: this.toggleHotkeyWindow,
+    };
+
 
     render() {
         return (
-            <div style={{ height: '100vh' }}>
-                <AppHeader />
-                <div>
+            <HotKeys keyMap={KeyMap.app} handlers={this.handlers}>
+                <div style={{ height: '100vh' }}>
+                    <AppHeader />
 
+                    <AppFooter />
                 </div>
-                <AppFooter />
-            </div>
+
+                <HotkeyDialog
+                    onClose={() => this.setState({
+                        showHotKeys: false
+                    })}
+                    isOpen={this.state.showHotKeys} />
+            </HotKeys>
         );
     }
 }

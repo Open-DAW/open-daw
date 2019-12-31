@@ -156,9 +156,10 @@ code {
   transition: 450ms ease-in-out;
 }
 
-.title {
-  font-weight: 200;
+hr {
+  border-color: $colGrayMid;
 }
+
 .text-mutted {
   font-size: 12px;
 }
@@ -166,17 +167,6 @@ code {
   @extend .center;
   justify-content: space-between;
   width: 100%;
-}
-
-a {
-  font-size: 12px;
-  color: $grayMutted;
-  padding: 0;
-  margin-bottom: 10px;
-  text-align: left;
-  &:hover {
-    color: darken($grayMutted, 5%);
-  }
 }
 
 .centered-abs {
@@ -192,4 +182,22 @@ a {
   right: 10px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+.list-item {
+  width: 400px;
+  align-items: center;
+  padding: 10px 0;
+
+  border-bottom: 1px solid $grayBorder;
+  &:first-of-type {
+    border-top: 1px solid $grayBorder;
+  }
+}
+
+.border-bottom {
+  border-bottom: 1px solid $grayBorder;
+}
+.border-top {
+  border-top: 1px solid $grayBorder;
 }
