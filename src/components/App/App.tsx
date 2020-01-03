@@ -14,6 +14,7 @@ import ChannelRack from '../Windows/ChannelRack/ChannelRack';
 import ReactTooltip from 'react-tooltip'
 import Knob from '../Forms/Knob';
 import { ButtonNav } from '../Forms/Button';
+import FileExplorer from '../Windows/FileExplorer/FileExplorer';
 
 interface IRecipeState {
   openDialog: boolean;
@@ -61,11 +62,11 @@ export default class App extends React.Component<{ showScale: boolean }, IRecipe
   render() {
     return (
       <div style={{ height: '100vh' }}>
-        <ButtonNav toRoute="workspace" label="Workspace"/>
-        <ButtonNav toRoute="signin" label="Signin"/>
-        <ButtonNav toRoute="signup" label="Signup"/>
+        <ButtonNav toRoute="workspace" label="Workspace" />
+        <ButtonNav toRoute="signin" label="Signin" />
+        <ButtonNav toRoute="signup" label="Signup" />
 
-        <Window grid={this.state.grid} style={{ width: '600px', height: '250px' }} title="UI Components">
+        <Window width={400} title="UI Components">
           <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
             <CRPatternKey></CRPatternKey>
             <CRPatternKey active></CRPatternKey>
@@ -104,6 +105,8 @@ export default class App extends React.Component<{ showScale: boolean }, IRecipe
         </Window>
 
         <ChannelRack />
+        <FileExplorer />
+
         <ReactTooltip />
       </div>
     );

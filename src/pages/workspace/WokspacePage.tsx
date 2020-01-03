@@ -5,6 +5,8 @@ import { HotKeys } from "react-hotkeys";
 import { KeyMap } from '../../config/hotkeys';
 import HotkeyDialog from '../../components/Dialogs/Hotkeys.dia';
 import Sidebar from "react-sidebar";
+import ChannelRack from '../../components/Windows/ChannelRack/ChannelRack';
+import FileExplorer from '../../components/Windows/FileExplorer/FileExplorer';
 
 interface IRecipeState {
     showHotKeys: boolean;
@@ -46,9 +48,10 @@ export default class WorkspacePage extends React.Component<{ showScale: boolean 
                 >
                     <div style={{ height: '100vh' }}>
                         <AppHeader onClickMenu={this.onSetSidebarOpen} />
-                        {/* <button onClick={() => this.onSetSidebarOpen(true)}>
-                            Open sidebar
-                        </button> */}
+                        <div className="app-content">
+                            <ChannelRack />
+                            <FileExplorer />
+                        </div>
                         <AppFooter />
                     </div>
 

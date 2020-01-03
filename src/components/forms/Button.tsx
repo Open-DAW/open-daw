@@ -10,6 +10,7 @@ interface IRecipeProps extends hasClassName, hasStyle, hasOnClick, hasNavigation
     disabled?: boolean;
     transparent?: boolean;
     type?: "button" | "submit" | "reset" | undefined;
+    tip?: string;
 }
 export class Button extends React.Component<IRecipeProps> {
     static defaultProps = {
@@ -29,16 +30,17 @@ export class Button extends React.Component<IRecipeProps> {
     render() {
         return (
             <button
+                data-tip={this.props.tip}
                 disabled={this.props.disabled}
                 onClick={this.handleOnClick}
                 style={this.props.style}
                 type={this.props.type}
                 className={
-                    ["button", 
-                    this.props.className, 
-                    this.props.icon ? 'icon' : '',
-                    this.props.transparent ? 'transparent' : '',
-                ].join(' ')}
+                    ["button",
+                        this.props.className,
+                        this.props.icon ? 'icon' : '',
+                        this.props.transparent ? 'transparent' : '',
+                    ].join(' ')}
             >
                 {this.props.label || this.props.children}
             </button>

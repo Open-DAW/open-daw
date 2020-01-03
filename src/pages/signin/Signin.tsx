@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Box from '../../components/Layout/Box';
 import Logo from '../../components/base/Logo';
 import Title from '../../components/Text/Title';
@@ -8,12 +8,6 @@ import { Link } from "@react-navigation/web";
 import animations from '../../animations';
 import { Input, InputPassword } from '../../components/Forms/Input';
 import GoogleLogin from "react-google-login";
-
-function responseGoogle(e) {
-    console.log(e);
-}
-
-(window as any).responseGoogle = responseGoogle;
 
 export default class Signin extends React.Component<{}, { isSubmitting: boolean; canSubmit: boolean }> {
     static defaultProps = {}

@@ -1,8 +1,8 @@
 import React from 'react';
 import './ChannelRack.scss';
-import { hasStyle } from '../../base/interfaces/component-props';
+import { hasStyle, hasOnClick } from '../../base/interfaces/component-props';
 
-interface IRecipeProps extends hasStyle {
+interface IRecipeProps extends hasStyle, hasOnClick {
     active?: boolean;
     color: string;
 }
@@ -25,6 +25,7 @@ export default class CRPatternKey extends React.Component<IRecipeProps, IRecipeS
 
     onClick = () => {
         this.setState({ active: !this.state.active });
+        this.props.onClick && this.props.onClick(!this.state.active);
     }
 
     render() {

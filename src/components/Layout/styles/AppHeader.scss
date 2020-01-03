@@ -6,4 +6,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+}
+.app-content {
+  position: absolute;
+  top: 50px;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  padding: 5px;
 }

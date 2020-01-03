@@ -5,15 +5,21 @@ import WindowFooter from './WindowFooter';
 import WindowContent from './WindowContent';
 import './Window.scss';
 import { hasStyle, hasClassName } from '../base/interfaces/component-props';
-import { Resizable } from 're-resizable';
 
 interface IRecipeProps extends hasStyle, hasClassName {
     headerActive?: boolean;
     footerActive?: boolean;
     title?: string;
-    active?: boolean;
-    collapsed?: boolean;
-    grid?: number[] | any;
+    width: number | string;
+    height: number | string;
+    minWidth?: number | string;
+    minHeight?: number | string;
+    maxWidth?: number | string;
+    maxHeight?: number | string;
+    x: number;
+    y: number;
+    dragGrid: [number, number];
+    dragAxis: 'x' | 'y' | 'both' | 'none';
 }
 
 interface IRecipeState {
@@ -26,39 +32,26 @@ export default class AppWindow extends React.Component<IRecipeProps, IRecipeStat
         footerActive: false,
         title: 'Window',
         style: {},
-        grid: [50, 50]
-    }
-
-    constructor(props: any) {
-        super(props);
-        this.state = {
-            active: false,
-            collapsed: false,
-        };
-    }
-
-    onClick = () => {
-        this.setState({ active: !this.state.active });
-    }
-
-    onAction = (action: string) => {
-        if (action === 'collapse') {
-            this.setState({ collapsed: true });
-        }
-        if (action === 'expand') {
-            this.setState({ collapsed: true });
-        }
+        width: 500,
+        height: 300,
+        x: 0,
+        y: 0,
+        dragGrid: [50, 50],
+        resizeGrid: [1, 1],
+        dragAxis: 'both',
     }
 
     render() {
         return (
-            <FloatingWindow grid={this.props.grid} style={this.props.style}>
+            <FloatingWindow
+                dragHandleClassName='window-header'
+                {...this.props} style={this.props.style}>
                 {this.props.headerActive &&
-                    <WindowHeader onAction={this.onAction} title={this.props.title} active={this.state.active}></WindowHeader>
+                    <WindowHeader title={this.props.title}></WindowHeader>
                 }
 
                 {this.props.children &&
-                    <WindowContent className={this.props.className} collapsed={this.state.collapsed}>{this.props.children}</WindowContent>
+                    <WindowContent className={this.props.className}>{this.props.children}</WindowContent>
                 }
 
                 {this.props.footerActive &&

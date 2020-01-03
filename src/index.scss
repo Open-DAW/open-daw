@@ -130,7 +130,10 @@ code {
   padding: 3px 8px;
   font-weight: 400;
 }
-
+.__react_component_tooltip.place-bottom,
+.__react_component_tooltip.place-top {
+  margin-top: 0 !important;
+}
 .__react_component_tooltip.type-dark.place-bottom:after {
   border-bottom-color: $bgHeader;
   display: none;
@@ -184,10 +187,25 @@ hr {
   transform: translateY(-50%);
 }
 
+.right-abs {
+  position: absolute !important;
+  right: 10px !important;
+  top: 50% !important;
+  transform: translateY(-50%);
+}
+
+.__react_component_tooltip {
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  transition: all ease-in-out 0.3s;
+}
+
 .list-item {
   width: 400px;
   align-items: center;
-  padding: 10px 0;
+  padding: 6px 0;
+  padding-left: 12px;
 
   border-bottom: 1px solid $grayBorder;
   &:first-of-type {

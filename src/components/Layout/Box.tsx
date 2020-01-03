@@ -1,6 +1,6 @@
 import React from 'react';
 import { hasClassName, hasStyle } from '../base/interfaces/component-props';
-import Radium, { StyleRoot } from 'radium';
+import { StyleRoot } from 'radium';
 import './styles/Box.scss';
 
 interface IRecipeProps extends hasClassName, hasStyle {

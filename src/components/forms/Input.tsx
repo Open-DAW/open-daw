@@ -3,26 +3,34 @@ import './styles/Input.scss';
 import { Button } from './Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons'
+import { hasOnChange } from '../base/interfaces/component-props';
 
 
-interface IRecipeProps {
+interface IRecipeProps extends hasOnChange {
     label?: string;
     type?: string;
-    name: string;
-    inputProps?: any;
+    value?: any;
+    name?: string;
+    placeholder?: string;
 }
 export class Input extends React.Component<IRecipeProps> {
     static defaultProps = {
-        label: '',
+        value: '',
         type: 'text',
-        name: 'input',
-        inputProps: {}
+        onChange(an) {
+
+        }
     }
 
     render() {
         return (
             <div className="input">
-                <input autoComplete="new-password" {...this.props.inputProps} placeholder={this.props.label} />
+                <input autoComplete="new-password"
+                    placeholder={this.props.placeholder || this.props.label}
+                    value={this.props.value}
+                    type={this.props.type}
+                    onInput={(evt) => this.props.onChange && this.props.onChange(evt.currentTarget.value)}
+                />
 
                 <div className="right-abs center" style={{ height: '100%' }}>
                     {this.props.children}
