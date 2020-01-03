@@ -11,11 +11,9 @@
     <img src="./.github/preview-3.png" width="45%">
 </div> 
 
-
-## What can I do if I'm interested?
-1. You can check back in a bit if you are interested in the project
-2. You can follow the progress of the development [here]()
-3. You can [join]() in and help in any way you can (_all type of help is apreciated_)
+## Resources
+You can find a basic demo [here](open-daw.com).  
+I also made a little Design Prototype with [figma](https://www.figma.com), you can find it [here](https://www.figma.com/file/Pgew53QVBQVijnU0GoNqmo/online-daw?node-id=0%3A1).
 
 
 ## Motivation
@@ -41,6 +39,10 @@ If the project goes forward this project would need:
 > If you would like to help in any of this ways or think you fit some other role, please let me know.
 
 
+## What can I do if I'm interested?
+1. You can check back in a bit if you are interested in the project
+2. You can follow the progress of the development [here]()
+3. You can [join]() in and help in any way you can (_all type of help is apreciated_)
 
 ## Steps
 1. Research `current`
