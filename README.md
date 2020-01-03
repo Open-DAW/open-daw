@@ -1,5 +1,11 @@
-# Libs to check out:
-* https://github.com/FormidableLabs/react-music
-* https://github.com/Sitebase/react-avatar
-* https://github.com/bokuweb/re-resizable
-* https://github.com/casesandberg/react-color
+# Open DAW
+
+> ### !NOTICE!  
+> **This project is in `development`.**  
+
+## What can I do if I'm interested?
+1. You can check back in a bit if you are interested in the project
+2. You can follow the progress of the development [here]()
+3. You can [join]() in and help in any way you can (_all type of help is apreciated_)
+
+
