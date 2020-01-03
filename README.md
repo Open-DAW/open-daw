@@ -1,10 +1,12 @@
-# Libs to check out:
-* https://github.com/FormidableLabs/react-music
-* https://github.com/Sitebase/react-avatar
-* https://github.com/casesandberg/react-color
-* https://github.com/trendmicro-frontend/react-notifications
-* https://github.com/trendmicro-frontend/react-validation
-* https://github.com/gilbarbara/react-joyride
-* https://github.com/pierpo/react-archer
-* https://github.com/bokuweb/react-rnd
-* https://github.com/storybookjs/react-treebeard
+
+# Open DAW
+
+> ### !NOTICE!  
+> **This project is in `development`.**  
+
+[![preview](./.github/preview.png)]()
+
+## What can I do if I'm interested?
+1. You can check back in a bit if you are interested in the project
+2. You can follow the progress of the development [here]()
+3. You can [join]() in and help in any way you can (_all type of help is apreciated_)
