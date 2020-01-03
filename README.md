@@ -18,3 +18,27 @@ The main motivation I had for starting this project was that, there is no **"Goo
 Another motivation for this project would be to help people like me, when I started making music, that don't have or don't want to invest tons of money at first, and give them the ability to create good music.
 
 My last motivation, is that this project could be a way of pushing Music Production into the js/web scene.
+
+## Needs
+What I need at the moment is:
+* Get your **opinions**, **ideas**, **sugestions**
+* Get the general **interest**
+  * What do you think about the project?
+  * Is it something you or somebody that you know, will use?
+  * Would you be up to help if this project goes forward?
+
+If the project goes forward this project would need:
+* A UI designer
+* Somebody that knows audio stuff :P
+* Some general developers
+
+> If you would like to help in any of this ways or think you fit some other role, please let me know.
+
+
+
+## Steps
+1. Research `current`
+2. Design
+3. Development (Beta)
+4. Release v1.0
+
