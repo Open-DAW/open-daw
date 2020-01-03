@@ -12,7 +12,7 @@
 </div> 
 
 ## Resources
-You can find a basic demo [here](open-daw.com).  
+You can find a basic demo [here](https://open-daw.com).  
 I also made a little Design Prototype with [figma](https://www.figma.com), you can find it [here](https://www.figma.com/file/Pgew53QVBQVijnU0GoNqmo/online-daw?node-id=0%3A1).
 
 
