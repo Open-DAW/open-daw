@@ -11,7 +11,7 @@ const MyNavigator = createSwitchNavigator({
     signin: Signin,
     signup: Signup,
 }, {
-    initialRouteName: 'app',
+    initialRouteName: 'workspace',
 });
 
 export const AppNav = createBrowserApp(MyNavigator);
