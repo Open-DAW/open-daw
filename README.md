@@ -6,6 +6,12 @@
 
 [![preview](./.github/preview.png)]()
 
+<div>
+    <img src="./.github/preview-2.png" width="45%">
+    <img src="./.github/preview-3.png" width="45%">
+</div> 
+
+
 ## What can I do if I'm interested?
 1. You can check back in a bit if you are interested in the project
 2. You can follow the progress of the development [here]()
