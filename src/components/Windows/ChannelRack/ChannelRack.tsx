@@ -59,7 +59,7 @@ export default class ChannelRack extends React.Component<IRecipeProps, IRecipeSt
                 new RackItem('Synth', new Instrument('synth', synth, [reverb, pingpong])),
                 new RackItem('Kick', new Sampler(sampleKick)),
                 new RackItem('Snare', new Sampler(sampleSnare)),
-                new RackItem('knock-fingers', new Sampler(sample2)),
+                // new RackItem('knock-fingers', new Sampler(sample2)),
             ]
         });
     }
