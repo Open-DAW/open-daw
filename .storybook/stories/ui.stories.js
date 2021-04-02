@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import Checkbox from '../../src/components/forms/Checkbox';
-import NumberSelect from '../../src/components/forms/NumberSelect';
+import Checkbox from '../../src/components/Forms/Checkbox';
+import Knob from '../../src/components/Forms/Knob';
+import NumberSelect from '../../src/components/Forms/NumberSelect';
 import { withKnobs, text, boolean, number } from "@storybook/addon-knobs";
 
 export default {
@@ -15,4 +16,8 @@ export const CheckboxAction = () => {
 
 export const NumberSelectAction = () => {
     return <NumberSelect />
+}
+
+export const KnobAction = () => {
+    return <Knob />
 }
