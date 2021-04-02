@@ -1,13 +1,14 @@
 import React from 'react';
+import GoogleLogin from "react-google-login";
+import { Link } from "@react-navigation/web";
+
 import Box from '../../components/Layout/Box';
 import Logo from '../../components/base/Logo';
-import Title from '../../components/Text/Title';
-import TextMutted from '../../components/Text/Mutted';
+import Title from '../../components/text/Title';
 import { Button, ButtonNav } from '../../components/Forms/Button';
-import { Link } from "@react-navigation/web";
 import animations from '../../animations';
 import { Input, InputPassword } from '../../components/Forms/Input';
-import GoogleLogin from "react-google-login";
+import TextMutted from '../../components/text/Mutted';
 
 export default class Signin extends React.Component<{}, { isSubmitting: boolean; canSubmit: boolean }> {
     static defaultProps = {}

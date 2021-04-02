@@ -1,7 +1,7 @@
 import React from 'react';
 import { hasOnChange, hasStyle } from '../base/interfaces/component-props';
 import { Coords } from '../base/interfaces/coordenates';
-import MonoText from '../Text/Mono';
+import MonoText from '../text/Mono';
 import { constrain } from '../../utils/utils';
 import './styles/Slider.scss';
 

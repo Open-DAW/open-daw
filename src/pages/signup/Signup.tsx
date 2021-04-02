@@ -1,11 +1,11 @@
 import React from 'react';
 import Box from '../../components/Layout/Box';
 import Logo from '../../components/base/Logo';
-import Title from '../../components/Text/Title';
-import TextMutted from '../../components/Text/Mutted';
+import TextMutted from '../../components/text/Mutted';
 import { Button, ButtonNav } from '../../components/Forms/Button';
 import { Input, InputPassword } from '../../components/Forms/Input';
 import animations from '../../animations';
+import Title from '../../components/text/Title';
 
 export default class Signup extends React.Component {
     static defaultProps = {}

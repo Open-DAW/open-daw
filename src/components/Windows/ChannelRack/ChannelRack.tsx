@@ -1,17 +1,18 @@
 import React from 'react';
+
 import './ChannelRack.scss';
 
 import { Scrollbars } from 'react-custom-scrollbars';
+import * as Tone from 'tone';
+
 import ChannelRackHeader from './ChannelRackHeader';
 import ChannelRackFooter from './ChannelRackFooter';
 import { RackItem } from '../../../entities/RackItem';
-import ChannelRackItem from '../../DAW/ChannelRack/ChannelRackItem';
-import AppWindow from '../../Window/Window';
-import * as Tone from 'tone';
 import { Instrument } from '../../../entities/Instrument';
 import { Sampler } from '../../../entities/DefaultIntruments/Sampler';
 import { Sample } from '../../../entities/Sample';
-// import kick from '../../../assets/samples/lofi-kick.wav';
+import ChannelRackItem from '../../DAW/ChannelRack/ChannelRackItem';
+import AppWindow from '../../Window/Window';
 
 interface IRecipeProps {
 
@@ -107,7 +108,7 @@ export default class ChannelRack extends React.Component<IRecipeProps, IRecipeSt
                     autoHeightMax={280}
                     style={{ width: 665, minHeight: 100, height: 'auto' }}>
                     {this.state.rackItems.map(
-                        item => (
+                        (item, i) => (
                             <ChannelRackItem
                                 ref={ref => {
                                     if (!(this.channelItemRefs.includes(ref))) {
@@ -115,7 +116,7 @@ export default class ChannelRack extends React.Component<IRecipeProps, IRecipeSt
                                     }
                                 }}
                                 item={item}
-                                key={item.name}
+                                key={i}
                                 name={item.name}
                                 octaves={this.state.octaves}
                             />
